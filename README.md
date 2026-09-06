@@ -1,6 +1,6 @@
 # mcp-mongodb
 
-[<!-- ![npm version](https://img.shields.io/npm/v/mcp-mongodb.svg)](https://www.npmjs.com/package/mcp-mongodb)
+<!-- [![npm version](https://img.shields.io/npm/v/mcp-mongodb.svg)](https://www.npmjs.com/package/mcp-mongodb)
 
 [![CI](https://github.com/davidedantonio/mcp-mongodb/actions/workflows/ci.yml/badge.svg)](https://github.com/davidedantonio/mcp-mongodb/actions/workflows/ci.yml)
 
