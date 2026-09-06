@@ -41,11 +41,13 @@ async function main(): Promise<void> {
 
   if (env.MCP_TRANSPORT === 'http') {
     const { startMcpServerHttp } = await import('./src/mcp-server-http.js')
-    return await startMcpServerHttp(deps)
+    await startMcpServerHttp(deps)
+    return
   }
 
   const { startMcpServerStdio } = await import('./src/mcp-server-stdio.js')
-  return await startMcpServerStdio(deps)
+  await startMcpServerStdio(deps)
+  return
 }
 
 main().catch((error) => {
