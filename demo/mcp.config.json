@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "databases": {
+    "demo": {
+      "collections": {
+        "customers": {
+          "allowedFields": [
+            "_id",
+            "code",
+            "name",
+            "email",
+            "country",
+            "segment",
+            "createdAt"
+          ],
+          "filterableFields": ["_id", "code", "country", "segment"],
+          "sortableFields": ["name", "createdAt"],
+          "requiredFilter": { "deleted": { "$ne": true } }
+        },
+        "products": {
+          "allowedFields": [
+            "_id",
+            "sku",
+            "name",
+            "category",
+            "price",
+            "stock",
+            "active"
+          ],
+          "filterableFields": ["_id", "sku", "category", "active", "price"],
+          "sortableFields": ["price", "name"],
+          "requiredFilter": { "deleted": { "$ne": true } }
+        },
+        "orders": {
+          "allowedFields": [
+            "_id",
+            "number",
+            "customerId",
+            "customerCode",
+            "status",
+            "channel",
+            "placedAt",
+            "items",
+            "total",
+            "currency"
+          ],
+          "filterableFields": [
+            "_id",
+            "number",
+            "customerId",
+            "customerCode",
+            "status",
+            "channel",
+            "placedAt"
+          ],
+          "sortableFields": ["placedAt", "total"],
+          "requiredFilter": { "deleted": { "$ne": true } }
+        },
+        "invoices": {
+          "allowedFields": [
+            "_id",
+            "number",
+            "orderId",
+            "customerId",
+            "issuedAt",
+            "dueAt",
+            "net",
+            "vatAmount",
+            "total",
+            "currency",
+            "status"
+          ],
+          "filterableFields": [
+            "_id",
+            "number",
+            "orderId",
+            "customerId",
+            "status",
+            "issuedAt",
+            "dueAt"
+          ],
+          "sortableFields": ["issuedAt", "dueAt", "total"],
+          "requiredFilter": { "deleted": { "$ne": true } }
+        }
+      }
+    }
+  }
+}

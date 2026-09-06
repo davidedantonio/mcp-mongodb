@@ -1,0 +1,50 @@
+{
+  "name": "mcp-mongodb",
+  "version": "1.0.0",
+  "description": "A Model Context Protocop server for MongoDB databases",
+  "keywords": [
+    "mcp",
+    "mongodb"
+  ],
+  "license": "MIT",
+  "author": "Davide D'Antonio <davide.dantonio1984@gmail.com>",
+  "type": "module",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "clean": "rm -rf lib",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check src index.ts test",
+    "demo:up": "docker compose -f demo/docker-compose.yml up -d --wait",
+    "demo:down": "docker compose -f demo/docker-compose.yml down",
+    "demo:reset": "docker compose -f demo/docker-compose.yml down -v && npm run demo:up",
+    "demo:http": "tsx demo/http-client.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.11",
+    "@types/node": "^26.4.1",
+    "@vitest/coverage-v8": "^5.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "bson": "^7.3.2",
+    "mongodb": "^7.6.0",
+    "pino": "^10.3.1",
+    "zod": "^4.5.4"
+  },
+  "types": "lib/index.d.ts",
+  "bin": {
+    "mcp-mongodb": "lib/index.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

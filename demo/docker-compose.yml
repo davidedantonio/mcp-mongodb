@@ -1,0 +1,25 @@
+name: mcp-mongodb-demo
+
+services:
+  mongo:
+    image: mongo:8.0
+    container_name: mcp-mongo-demo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root_pw
+      MONGO_INITDB_DATABASE: demo
+    volumes:
+      - mongo-data:/data/db
+      - ./seed.js:/docker-entrypoint-initdb.d/seed.js:ro
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+volumes:
+  mongo-data:

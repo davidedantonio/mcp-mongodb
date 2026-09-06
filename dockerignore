@@ -1,0 +1,11 @@
+node_modules
+lib
+demo
+test
+.git
+.github
+*.md
+.env*
+coverage
+vitest*.config.ts
+biome.json
