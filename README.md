@@ -1,12 +1,13 @@
 # mcp-mongodb
 
-[![npm version](https://img.shields.io/npm/v/mcp-mongodb.svg)](https://www.npmjs.com/package/mcp-mongodb)
+[<!-- ![npm version](https://img.shields.io/npm/v/mcp-mongodb.svg)](https://www.npmjs.com/package/mcp-mongodb)
 
-<!-- [![CI](https://github.com/davidedantonio/mcp-mongodb/actions/workflows/ci.yml/badge.svg)](https://github.com/davidedantonio/mcp-mongodb/actions/workflows/ci.yml)-->
+[![CI](https://github.com/davidedantonio/mcp-mongodb/actions/workflows/ci.yml/badge.svg)](https://github.com/davidedantonio/mcp-mongodb/actions/workflows/ci.yml)
 
 [![codecov](https://codecov.io/gh/davidedantonio/mcp-mongodb/branch/main/graph/badge.svg)](https://codecov.io/gh/davidedantonio/mcp-mongodb)
 [![node](https://img.shields.io/node/v/mcp-mongodb.svg)](https://nodejs.org)
 [![license](https://img.shields.io/npm/l/mcp-mongodb.svg)](./LICENSE)
+-->
 
 A [Model Context Protocol](https://modelcontextprotocol.io) server that exposes MongoDB collections to LLM clients — read-only by construction, and only the
 fields you declare.
