@@ -59,7 +59,6 @@ const deps: MongoMcpDepsType = {
   logger,
   mongo: { execute } as unknown as MongoConnection,
   validator: new QueryValidator({
-    allowWriteOps: false,
     allowedDatabases: env.MONGODB_ALLOWED_DATABASES,
     config,
     logger

@@ -26,7 +26,6 @@ async function main(): Promise<void> {
     logger,
     mongo: new MongoConnection(env, logger.child({ component: 'mongo' })),
     validator: new QueryValidator({
-      allowWriteOps: env.MCP_ALLOW_WRITE_OPERATIONS,
       allowedDatabases: env.MONGODB_ALLOWED_DATABASES,
       config,
       logger: logger.child({ component: 'validator' })

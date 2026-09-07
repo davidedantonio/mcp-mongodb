@@ -69,37 +69,6 @@ describe('EnvSchema', () => {
       EnvSchema.parse({ ...minimalEnv, MCP_HTTP_AUTH_TOKEN: 'too-short' })
     ).toThrow()
   })
-
-  it('treats MCP_ALLOW_WRITE_OPERATIONS=false as false', () => {
-    const env = EnvSchema.parse({
-      ...minimalEnv,
-      MCP_ALLOW_WRITE_OPERATIONS: 'false'
-    })
-
-    expect(env.MCP_ALLOW_WRITE_OPERATIONS).toBe(false)
-  })
-
-  it('treats MCP_ALLOW_WRITE_OPERATIONS=0 as false', () => {
-    const env = EnvSchema.parse({
-      ...minimalEnv,
-      MCP_ALLOW_WRITE_OPERATIONS: '0'
-    })
-
-    expect(env.MCP_ALLOW_WRITE_OPERATIONS).toBe(false)
-  })
-
-  it('defaults MCP_ALLOW_WRITE_OPERATIONS to false', () => {
-    expect(EnvSchema.parse(minimalEnv).MCP_ALLOW_WRITE_OPERATIONS).toBe(false)
-  })
-
-  it('can still be switched on deliberately', () => {
-    const env = EnvSchema.parse({
-      ...minimalEnv,
-      MCP_ALLOW_WRITE_OPERATIONS: 'true'
-    })
-
-    expect(env.MCP_ALLOW_WRITE_OPERATIONS).toBe(true)
-  })
 })
 
 describe('ConfigSchema', () => {

@@ -20,7 +20,6 @@ import {
 } from './types.js'
 
 export interface QueryValidatorOptions {
-  allowWriteOps: boolean
   allowedDatabases: Iterable<string>
   config: ConfigType
   logger: Logger
@@ -110,7 +109,6 @@ export function assertSafeDocument(
 }
 
 export class QueryValidator {
-  private readonly allowWriteOps: boolean
   private readonly allowedDatabases: ReadonlySet<string>
   private readonly config: ConfigType
   private readonly logger: Logger
@@ -118,7 +116,6 @@ export class QueryValidator {
   private readonly maxPipelineStages: number
 
   constructor(options: QueryValidatorOptions) {
-    this.allowWriteOps = options.allowWriteOps
     this.allowedDatabases = new Set(options.allowedDatabases)
     this.config = options.config
     this.logger = options.logger
@@ -183,8 +180,7 @@ export class QueryValidator {
       {
         operation: command.operation,
         database: command.database,
-        collection: command.collection,
-        allowWriteOps: this.allowWriteOps
+        collection: command.collection
       },
       'Query validated successfully'
     )
@@ -193,7 +189,7 @@ export class QueryValidator {
   }
 
   private assertOperationAllowed(operation: string): void {
-    if (READ_OPERATIONS.has(operation) || this.allowWriteOps) {
+    if (READ_OPERATIONS.has(operation)) {
       return
     }
 

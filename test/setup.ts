@@ -27,7 +27,6 @@ export async function buildDeps(): Promise<MongoMcpDepsType> {
     logger,
     mongo: new MongoConnection(env, logger),
     validator: new QueryValidator({
-      allowWriteOps: false,
       allowedDatabases: env.MONGODB_ALLOWED_DATABASES,
       config,
       logger

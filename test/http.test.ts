@@ -81,7 +81,6 @@ const buildDeps = (
       close: async () => undefined
     } as unknown as MongoConnection,
     validator: new QueryValidator({
-      allowWriteOps: false,
       allowedDatabases: env.MONGODB_ALLOWED_DATABASES,
       config,
       logger

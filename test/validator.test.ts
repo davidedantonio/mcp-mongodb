@@ -30,7 +30,6 @@ const config: ConfigType = {
 }
 
 const validator = new QueryValidator({
-  allowWriteOps: false,
   allowedDatabases: ['shop'],
   config,
   logger: createLogger({ level: 'silent' })

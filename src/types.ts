@@ -8,7 +8,6 @@ export const EnvSchema = z
   .object({
     // MongoDB configuration environment variables
     MONGODB_URI: z.string().regex(/^mongodb(?:\+srv)?:\/\/\S+$/),
-    MCP_ALLOW_WRITE_OPERATIONS: z.stringbool().default(false),
     MONGODB_ALLOWED_DATABASES: z
       .string()
       .transform((value) =>
