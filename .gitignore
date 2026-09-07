@@ -11,6 +11,7 @@ coverage/
 dist/
 build/
 out/
+mcp-mongodb-*
 
 # Logs
 logs/

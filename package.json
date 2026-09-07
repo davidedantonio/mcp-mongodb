@@ -1,10 +1,13 @@
 {
   "name": "mcp-mongodb",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A Model Context Protocop server for MongoDB databases",
   "keywords": [
     "mcp",
     "mongodb"
+  ],
+  "files": [
+    "lib"
   ],
   "license": "MIT",
   "author": "Davide D'Antonio <davide.dantonio1984@gmail.com>",
@@ -46,5 +49,16 @@
   },
   "engines": {
     "node": ">=22"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidedantonio/mcp-mongodb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidedantonio/mcp-mongodb/issues"
+  },
+  "homepage": "https://github.com/davidedantonio/mcp-mongodb#readme"
 }
