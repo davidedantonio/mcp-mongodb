@@ -12,7 +12,6 @@ import { EnvSchema } from './src/types.js'
 import { QueryValidator } from './src/validator.js'
 
 async function main(): Promise<void> {
-  console.log(process.env)
   const env = validate(EnvSchema, process.env, 'Invalid environment variables')
   const config = await loadConfig(env)
   const logger = createLogger({
