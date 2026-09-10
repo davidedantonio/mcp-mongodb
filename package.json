@@ -1,6 +1,6 @@
 {
   "name": "mcp-mongodb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple MCP server for MongoDB databases",
   "keywords": [
     "mcp",
